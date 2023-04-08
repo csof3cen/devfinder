@@ -3,6 +3,15 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
+  <div
+    class="absolute filter blur-3xl -z-50 mix-blend-normal opacity-75 animate-blobright top-[14%] left-[48%] w-72 h-72 bg-purple-400 rounded-full">
+  </div>
+  <div
+    class="absolute filter blur-3xl -z-50 mix-blend-normal opacity-75 top-[18%] right-[48%] w-72 h-72 bg-yellow-300 rounded-full animate-blobleft">
+  </div>
+  <div
+    class="absolute filter blur-3xl -z-50 mix-blend-normal opacity-75 top-[27%] right-[42%] w-72 h-72 bg-pink-300 rounded-full animate-blobright">
+  </div>
   <header class="flex justify-between items-center">
     <!-- TITLE -->
     <div class="font-bold text-xl">devfinder</div>
@@ -24,6 +33,30 @@ import { RouterView } from 'vue-router'
     </div>
   </header>
   <RouterView />
+
+
+  <div class="flex items-center justify-center mt-10">
+    <div class="relative group">
+      <div
+        class="absolute -inset-0.5 bg-gradient-to-r from from-pink-600 to-primary  rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt">
+      </div>
+
+      <a href="#"
+        class="relative flex items-center md:divide-x dark:divide-gray-500/60 divide-gray-200 px-7 py-4 bg-white dark:bg-darkfg rounded-lg leading-none border dark:border-primary/10 border-primary/30">
+        <div class="flex items-center space-x-5">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+          </svg>
+
+          <span class="pr-6 dark:text-gray-100 text-slate-900 hidden md:inline-block">Devfinder Bêta</span>
+        </div>
+        <span class="pl-6 text-primary group-hover:text-primary-light transition duration-200">Contribute&nbsp;
+          &rarr;</span>
+      </a>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
