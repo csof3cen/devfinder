@@ -20,4 +20,51 @@
       <button class="btn capitalize font-semibold">search</button>
     </div>
     <div class="w-full h-96 dark:bg-darkfg bg-white rounded-xl"></div>
-</main></template>
+  </main>
+</template>
+
+<script>
+import axios from "axios";
+export default {
+  components: {},
+  data() {
+    return {
+      username: "",
+      userInfos: "",
+      joinedDate: "",
+      notFound: false,
+    };
+  },
+  methods: {
+    search() {
+      axios
+        .get("https://api.github.com/users/" + this.username)
+        .then((res) => {
+          console.log(res.data);
+          if (res) {
+            this.userInfos = res.data;
+            let date = res.data.created_at;
+            let format = new Date(date);
+            let day = format.getUTCDate();
+            let month = format.getUTCMonth() + 1;
+            let year = format.getUTCFullYear();
+            let formattedDate = day + "." + month + "." + year;
+            this.joinedDate = formattedDate;
+          }
+          this.notFound = false;
+        })
+        .catch((err) => {
+          if (err.response) {
+            console.log(err.response);
+          } else if (err.request) {
+            console.log("no response found");
+          } else {
+            console.log(err);
+            this.notFound = true;
+          }
+          this.notFound = true;
+        });
+    },
+  },
+};
+</script>
