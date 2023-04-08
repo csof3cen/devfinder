@@ -23,4 +23,32 @@ body {
   .icon-btn {
     @apply p-2 hover:dark:bg-darkfg/70 hover:bg-gray-200 rounded-lg flex items-center justify-center;
   }
+
+  .btn {
+    @apply px-6 py-3 text-sm bg-primary rounded-lg text-white;
+  }
+
+  input {
+    @apply font-semibold;
+  }
+
+  ::-webkit-input-placeholder {
+    @apply text-gray-200 font-semibold;
+  }
+
+  ::-moz-placeholder {
+    @apply text-gray-200 font-semibold;
+  }
+
+  :-ms-input-placeholder {
+    @apply text-gray-200 font-semibold;
+  }
+
+  ::-ms-input-placeholder {
+    @apply text-gray-200 font-semibold;
+  }
+
+  ::placeholder {
+    @apply text-gray-200 font-semibold;
+  }
 }

@@ -5,7 +5,7 @@ import { RouterView } from 'vue-router'
 <template>
   <header class="flex justify-between items-center">
     <!-- TITLE -->
-    <div class="font-bold text-lg">devfinder</div>
+    <div class="font-bold text-xl">devfinder</div>
     <!-- THEME BUTTON -->
     <div class="flex items-center space-x-3">
       <div class="uppercase">{{ theme !== 'dark' ? 'light' : 'dark' }}</div>
