@@ -1,6 +1,5 @@
-# devfinder
-
-This template should help get you started developing with Vue 3 in Vite.
+# devfinder - devfinder.moustapha.dev
+![Screenshot](./screenshots/capture.png)
 
 ## Recommended IDE Setup
 
