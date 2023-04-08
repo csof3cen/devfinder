@@ -20,29 +20,29 @@
     </div>
 
     <!-- USER DETAILS SECTION -->
-    <div class="w-full dark:bg-darkfg bg-white rounded-xl p-10">
+    <div class="w-full dark:bg-darkfg bg-white rounded-xl md:p-10 p-6">
       <div class="" v-if="notFound === true">
         <p class="font-semibold text-xl text-center">User not foud ! Please check provided username.</p>
       </div>
-      <div v-if="userInfos && notFound === false" class="flex items-start w-full">
+      <div v-if="userInfos && notFound === false" class="flex md:flex-row flex-col items-start w-full">
         <!-- USER AVATAR -->
-        <div class="min-w-max">
+        <div class="min-w-max flex justify-center items-center md:w-auto w-full md:inline-block">
           <img :src="userInfos.avatar_url" alt="User avatar" class="h-32 w-32 rounded-full">
         </div>
         <!-- USER DETAILS -->
-        <div class="flex flex-col w-full ml-10">
-          <div class="flex w-full justify-between items-center">
+        <div class="flex flex-col w-full md:ml-10">
+          <div class="flex md:mt-0 mt-4 md:flex-row flex-col w-full justify-between items-center">
             <div class="text-2xl font-semibold">{{ userInfos.name ?? 'No display name' }}</div>
             <div class="text-base text-gray-300">Joined {{ joinedDate }}</div>
           </div>
 
           <!-- USERNAME -->
-          <div class="mt-4 text-primary/80 hover:text-primary">
+          <div class="mt-4 text-primary/80 hover:text-primary md:text-left text-center">
             <a :href="userInfos.html_url" target="_blank" rel="noopener noreferrer">@{{ userInfos.login }}</a>
           </div>
 
           <!-- USER BIO -->
-          <div class="semi-muted mt-6">{{ userInfos.bio ?? 'This profile has no bio' }}</div>
+          <div class="semi-muted mt-6 text-justify">{{ userInfos.bio ?? 'This profile has no bio' }}</div>
 
           <!-- USER REPO STATS -->
           <div class="dark:bg-darkbg bg-gray-200 p-4 flex justify-between rounded-lg mt-6">

@@ -41,7 +41,7 @@ import { RouterView } from 'vue-router'
         class="absolute -inset-0.5 bg-gradient-to-r from from-pink-600 to-primary  rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt">
       </div>
 
-      <a href="#"
+      <a href="https://github.com/csof3cen/devfinder" target="_blank"
         class="relative flex items-center md:divide-x dark:divide-gray-500/60 divide-gray-200 px-7 py-4 bg-white dark:bg-darkfg rounded-lg leading-none border dark:border-primary/10 border-primary/30">
         <div class="flex items-center space-x-5">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
