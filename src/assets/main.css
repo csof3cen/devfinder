@@ -51,4 +51,12 @@ body {
   ::placeholder {
     @apply text-gray-200 font-semibold;
   }
+
+  /* Change the white to any color */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    background-color: transparent !important;
+  }
 }
