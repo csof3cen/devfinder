@@ -12,14 +12,19 @@
         </svg>
       </div>
       <!-- SEARCH INPUT -->
-      <input type="text" maxlength="50" name="search" id="search" v-model="username" @keydown.enter="search()" autofocus
+      <input type="text" maxlength="50" name="search" id="search" autocomplete="off" v-model="username" @keydown.enter="search()" autofocus
         placeholder="Search GITHUB username"
         class="bg-transparent w-full outline-none border-none focus:border-none focus:outline-none h-10 mx-4">
       <!-- SEARCH BUTTON -->
       <button class="btn capitalize font-semibold">search</button>
     </div>
+
+    <!-- USER DETAILS SECTION -->
     <div class="w-full dark:bg-darkfg bg-white rounded-xl p-10">
-      <div class="flex items-start w-full">
+      <div class="" v-if="notFound === true">
+        <p class="font-semibold text-xl text-center">User not foud ! Please check provided username.</p>
+      </div>
+      <div v-if="userInfos && notFound === false" class="flex items-start w-full">
         <!-- USER AVATAR -->
         <div class="min-w-max">
           <img :src="userInfos.avatar_url" alt="User avatar" class="h-32 w-32 rounded-full">
@@ -32,25 +37,25 @@
           </div>
 
           <!-- USERNAME -->
-          <div class="mt-4 text-primary">
+          <div class="mt-4 text-primary/80 hover:text-primary">
             <a :href="userInfos.html_url" target="_blank" rel="noopener noreferrer">@{{ userInfos.login }}</a>
           </div>
 
           <!-- USER BIO -->
-          <div class="text-gray-300 mt-6">{{ userInfos.bio ?? 'This profile has no bio' }}</div>
+          <div class="semi-muted mt-6">{{ userInfos.bio ?? 'This profile has no bio' }}</div>
 
           <!-- USER REPO STATS -->
           <div class="dark:bg-darkbg bg-gray-200 p-4 flex justify-between rounded-lg mt-6">
             <div class="flex flex-col">
-              <div class="text-sm text-gray-300">Repos</div>
+              <div class="semi-muted">Repos</div>
               <div class="text-xl font-semibold">{{ userInfos.public_repos }}</div>
             </div>
             <div class="flex flex-col">
-              <div class="text-sm text-gray-300">Followers</div>
+              <div class="semi-muted">Followers</div>
               <div class="text-xl font-semibold">{{ userInfos.followers }}</div>
             </div>
             <div class="flex flex-col">
-              <div class="text-sm text-gray-300">Following</div>
+              <div class="semi-muted">Following</div>
               <div class="text-xl font-semibold">{{ userInfos.following }}</div>
             </div>
           </div>
