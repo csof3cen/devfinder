@@ -1,7 +1,26 @@
 @tailwind base;
-@tailwind components;
 @tailwind utilities;
+@tailwind components;
 
 html {
   font-family: 'Space Mono', monospace;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  @apply scroll-smooth;
+}
+
+@layer components {
+  .icon-btn {
+    @apply p-2 hover:dark:bg-darkfg/70 hover:bg-gray-200 rounded-lg flex items-center justify-center;
+  }
 }
